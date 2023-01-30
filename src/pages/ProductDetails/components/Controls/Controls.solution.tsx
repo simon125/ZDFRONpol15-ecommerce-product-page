@@ -18,7 +18,7 @@ export const Controls: FC = () => {
 
   return (
     <>
-      <Counter value={state} onChange={setState} />
+      {/* <Counter value={state} onChange={setState} /> */}
       <Button
         onClick={handleChange}
         className={classes.addToCartButton}

@@ -4,11 +4,18 @@ import { Badge } from "components/Bagde/Badge";
 import classes from "./ShoppingCart.module.css";
 import { useEffect } from "react";
 import { Button } from "components/Button/Button";
+import { Order } from "pages/ProductDetails/types";
 
-interface ShoppingCartProps {}
+interface ShoppingCartProps {
+  orders: Order[];
+  onDeleteClick: (prodcutId: string) => void;
+}
 
-export const ShoppingCart: FC<ShoppingCartProps> = ({}) => {
-  const amount = 20;
+export const ShoppingCart: FC<ShoppingCartProps> = (props) => {
+  const { orders, onDeleteClick } = props;
+  const amount = orders.reduce((sum, order) => {
+    return sum + order.amount;
+  }, 0);
 
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,6 +49,18 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({}) => {
         <div className={classes.popup}>
           <h2 className={classes.popupHeading}>Cart</h2>
           <div className={classes.popupContent}>
+            {orders.map((order) => (
+              <div key={order.product.id}>
+                {order.product.name}
+                <button
+                  onClick={() => {
+                    onDeleteClick(order.product.id);
+                  }}
+                >
+                  &times;
+                </button>
+              </div>
+            ))}
             <Button variant="orange">Checkout</Button>
           </div>
         </div>

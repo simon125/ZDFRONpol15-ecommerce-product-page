@@ -1,13 +1,13 @@
+import { Product } from "pages/ProductDetails/types";
 import React, { FC } from "react";
 import classes from "./Description.module.css";
 
-export const Description: FC = () => {
-  const product = {
-    company: "XYZ",
-    name: "Unknown Brand XYZ",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, beatae.",
-  };
+interface DescriptionProps {
+  product: Product | null;
+}
+
+export const Description: FC<DescriptionProps> = (props) => {
+  const { product } = props;
 
   return (
     <div>

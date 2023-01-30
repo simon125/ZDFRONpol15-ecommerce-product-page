@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classes from "./Counter.module.css";
 
 interface CounterProps {
-  onChange: (value: string) => void;
-  value: string;
-  min?: string;
+  onChange: (value: number) => void;
+  value: number;
+  min?: number;
   classNames?: {
     container?: string;
     value?: string;
@@ -14,14 +14,20 @@ interface CounterProps {
 export const Counter: FC<CounterProps> = ({
   onChange,
   value,
-  min = "0",
+  min = 0,
   classNames,
 }) => {
   return (
     <div className={`${classes.container} ${classNames?.container || ""}`}>
-      <button className={classes.button}>-</button>
-      <span className={`${classes.value} ${classNames?.value || ""}`}>23</span>
-      <button className={classes.button}>+</button>
+      <button onClick={() => onChange(value - 1)} className={classes.button}>
+        -
+      </button>
+      <span className={`${classes.value} ${classNames?.value || ""}`}>
+        {value}
+      </span>
+      <button onClick={() => onChange(value + 1)} className={classes.button}>
+        +
+      </button>
     </div>
   );
 };

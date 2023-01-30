@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Image } from "components/Image/Image";
 
 import classes from "./ImagePreview.module.css";
@@ -27,7 +27,7 @@ const imgs = [
 ] as const;
 
 export const ImagePreview: FC = () => {
-  const activeIdx = 1;
+  const [activeIdx, setActiveIdx] = useState(0);
   return (
     <div>
       <div>
@@ -35,9 +35,17 @@ export const ImagePreview: FC = () => {
       </div>
       <div className={classes.thumbnailsContainer}>
         {imgs.map((img, index) => (
-          <button key={img.id} className={classes.thumbnailButton}>
-            {/* TODO: dodaj ramkę aktywnemy thumbnailowi - przejżyj jakie są dostęne klasy w pliku ze stylami */}
-            <Image className={`${classes.thumbnail} `} src={img.thumbnail} />
+          <button
+            key={img.id}
+            className={classes.thumbnailButton}
+            onClick={() => setActiveIdx(index)}
+          >
+            <Image
+              className={`${classes.thumbnail} ${
+                activeIdx === index ? classes.active : ""
+              }`}
+              src={img.thumbnail}
+            />
           </button>
         ))}
       </div>

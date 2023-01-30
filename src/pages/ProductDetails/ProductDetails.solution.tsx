@@ -21,15 +21,15 @@ export const ProductDetails: FC = () => {
   return (
     <div className={classes.container}>
       <div className={classes.imagePreviewContainer}>
-        <ImagePreview />
+        {/* <ImagePreview /> */}
       </div>
-      <div className={classes.productDetailsContainer}>
+      {/* <div className={classes.productDetailsContainer}>
         <Description />
         <Price />
         <div className={classes.controlsContainer}>
           <Controls />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -4,10 +4,7 @@ import ordersReducer from "pages/ProductDetails/state/orderSlice";
 import { useDispatch } from "react-redux";
 
 export const store = configureStore({
-  reducer: {
-    productDetails: productDetailsReducer,
-    order: ordersReducer,
-  },
+  reducer: {},
 });
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
