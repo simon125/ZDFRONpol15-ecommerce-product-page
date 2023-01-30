@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.controlsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.imagePreviewContainer {
+  width: 50%;
+}
+
+.productDetailsContainer {
+  width: 40%;
+}

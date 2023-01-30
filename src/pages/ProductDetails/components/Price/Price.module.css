@@ -1,0 +1,32 @@
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 3.5rem;
+  color: #1d2026;
+}
+
+.discount {
+  color: #ff7e1b;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background-color: #ffeee2;
+  font-weight: 700;
+}
+
+.previousPrice {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  text-decoration-line: line-through;
+  color: #b6bcc8;
+  width: 100%;
+}

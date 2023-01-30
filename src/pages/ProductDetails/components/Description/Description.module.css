@@ -1,0 +1,24 @@
+.heading {
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff7e1b;
+  margin-top: 50px;
+}
+
+.subHeading {
+  font-weight: 700;
+  font-size: 4.4rem;
+  color: #1d2026;
+  margin-top: 30px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 26px;
+  color: #69707d;
+  margin-top: 30px;
+}

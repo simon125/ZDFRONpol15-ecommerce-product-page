@@ -1,0 +1,30 @@
+.button {
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 1em 3.5em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.button:enabled {
+  cursor: pointer;
+}
+
+.orange {
+  background-color: #ff7e1b;
+  color: white;
+}
+
+.orange:hover {
+  background-color: #ffab6a;
+}
+
+.orange svg,
+.orange path {
+  fill: white;
+  margin-right: 10px;
+}
