@@ -1,10 +1,13 @@
-import { selectProduct } from "pages/ProductDetails/state/productDetailsSlice";
 import React, { FC } from "react";
-import { useSelector } from "react-redux";
 import classes from "./Description.module.css";
 
 export const Description: FC = () => {
-  const product = useSelector(selectProduct);
+  const product = {
+    company: "XYZ",
+    name: "Unknown Brand XYZ",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, beatae.",
+  };
 
   return (
     <div>

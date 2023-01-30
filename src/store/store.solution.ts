@@ -1,12 +1,13 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
-
+import productDetailsReducer from "pages/ProductDetails/state/productDetailsSlice";
+import ordersReducer from "pages/ProductDetails/state/orderSlice";
 import { useDispatch } from "react-redux";
 
-// https://redux-toolkit.js.org/tutorials/quick-start
-// https://redux-toolkit.js.org/tutorials/typescript
-
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    productDetails: productDetailsReducer,
+    order: ordersReducer,
+  },
 });
 
 export const useAppDispatch: () => AppDispatch = useDispatch;

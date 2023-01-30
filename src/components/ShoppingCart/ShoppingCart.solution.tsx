@@ -4,11 +4,13 @@ import { Badge } from "components/Bagde/Badge";
 import classes from "./ShoppingCart.module.css";
 import { useEffect } from "react";
 import { Button } from "components/Button/Button";
+import { useSelector } from "react-redux";
+import { selectOrderAmount } from "pages/ProductDetails/state/orderSlice";
 
 interface ShoppingCartProps {}
 
 export const ShoppingCart: FC<ShoppingCartProps> = ({}) => {
-  const amount = 20;
+  const amount = useSelector(selectOrderAmount);
 
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -35,8 +37,9 @@ export const ShoppingCart: FC<ShoppingCartProps> = ({}) => {
     <div className={classes.container} ref={containerRef}>
       <button className={classes.cartButton} onClick={toggleIsOpen}>
         <ShoppingCartIcon />
-        {/* TODO: Dodaj warunek który pozwoli na wyświetlanie Badge wtedy gdy amount jest większe niż 0 */}
-        <Badge className={classes.productsAmountIndicator}>{amount}</Badge>
+        {Number(amount) > 0 && (
+          <Badge className={classes.productsAmountIndicator}>{amount}</Badge>
+        )}
       </button>
       {isOpen && (
         <div className={classes.popup}>

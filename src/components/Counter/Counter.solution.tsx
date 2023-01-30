@@ -19,9 +19,23 @@ export const Counter: FC<CounterProps> = ({
 }) => {
   return (
     <div className={`${classes.container} ${classNames?.container || ""}`}>
-      <button className={classes.button}>-</button>
-      <span className={`${classes.value} ${classNames?.value || ""}`}>23</span>
-      <button className={classes.button}>+</button>
+      <button
+        onClick={() =>
+          Number(value) > Number(min) && onChange(`${Number(value) - 1}`)
+        }
+        className={classes.button}
+      >
+        -
+      </button>
+      <span className={`${classes.value} ${classNames?.value || ""}`}>
+        {value}
+      </span>
+      <button
+        onClick={() => onChange(`${Number(value) + 1}`)}
+        className={classes.button}
+      >
+        +
+      </button>
     </div>
   );
 };

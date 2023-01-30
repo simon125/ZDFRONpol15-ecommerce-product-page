@@ -1,20 +1,9 @@
-export interface ProductImage {
-  id: number;
-  image: string;
-  thumbnail: string;
-}
+/**
+ * Na podstawie responsów z BE ustal model danych, "zamodeluj obiekty",
+ * "ustal kontrakt"
+ */
+export interface ProductImage {}
 
-export interface Product {
-  id: string;
-  company: string;
-  name: string;
-  price: string;
-  discount: string;
-  description: string;
-  images: ProductImage[];
-}
+export interface Product {}
 
-export interface Order {
-  product: Product;
-  amount: string;
-}
+export interface Order {}
